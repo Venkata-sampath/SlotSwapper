@@ -83,7 +83,6 @@ const deleteSlot = asyncHandler (async (req, res)=>{
     }
 
     await slot.deleteOne();
-    res.status(200).json({message: `Delete the slot with id: ${req.params.id}`, slot });
 });
 
 module.exports = {getSlots, createSlot, getSlot, updateSlot, deleteSlot};
