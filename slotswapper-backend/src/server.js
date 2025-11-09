@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 connectDb();
 
-// MIddleware
+// Middleware
 app.use(express.json());
 
 // Auth Routes
