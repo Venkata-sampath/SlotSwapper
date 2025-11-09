@@ -13,12 +13,12 @@ const getSlots = asyncHandler (async (req, res)=>{
 //@api POST /api/slots
 //@access private
 const createSlot = asyncHandler (async (req, res)=>{
-    console.log("the request body: ", req.body);
     const {title, startTime, endTime, status} = req.body;
     if(!title || !startTime || !endTime || !status){
         res.status(400);
         throw new Error("All fields are mandatory!");
     }
+    
     const slot = await Slot.create({
         title, startTime, endTime, status,
         user_id: req.user.id
@@ -83,6 +83,7 @@ const deleteSlot = asyncHandler (async (req, res)=>{
     }
 
     await slot.deleteOne();
+    res.json({message: `Slot deleted successfully`});
 });
 
 module.exports = {getSlots, createSlot, getSlot, updateSlot, deleteSlot};

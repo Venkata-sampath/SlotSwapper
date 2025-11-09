@@ -21,7 +21,6 @@ const registerUser = asyncHandler(async(req, res)=>{
 
     //Hashing Password
     const hashedPassword = await bcrypt.hash(password, 10);
-    console.log("hashed password: ", hashedPassword);
 
     const user = await User.create({
         username, email, password: hashedPassword
@@ -55,7 +54,7 @@ const loginUser = asyncHandler(async(req, res)=>{
                 id: user.id
             },
         }, process.env.ACCESS_TOKEN_SECRET,
-        {expiresIn: "15m"}
+        {expiresIn: "1hr"}
     )
     res.status(200).json({accessToken});
     }else{
