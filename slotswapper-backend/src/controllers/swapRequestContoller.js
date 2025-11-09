@@ -95,6 +95,10 @@ const swapResponse = asyncHandler ( async (req, res)=>{
         res.status(404);
         throw new Error("Swap request not found")
     }
+    if(swapRequest.ownerId.toString() !== req.user.id){
+        res.status(403);
+        throw new Error("Users dont have permission to give response to other user swaprequests");
+    }
 
     const offeredSlot = await Slot.findById(swapRequest.offeredSlotId);
     const requestedSlot = await Slot.findById(swapRequest.requestedSlotId);
