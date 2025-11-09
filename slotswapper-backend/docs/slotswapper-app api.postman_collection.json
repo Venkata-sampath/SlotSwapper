@@ -1,0 +1,402 @@
+{
+	"info": {
+		"_postman_id": "fce2be33-854d-4ac7-b3c3-56de62ddee2f",
+		"name": "slotswapper-app api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49886355",
+		"_collection_link": "https://satyaramsl72-4205919.postman.co/workspace/Venkata-Sampath-Guthina's-Works~3cd73ff7-0ccb-44d5-81d2-33a0f52d9602/collection/49886355-fce2be33-854d-4ac7-b3c3-56de62ddee2f?action=share&source=collection_link&creator=49886355"
+	},
+	"item": [
+		{
+			"name": "Auth Routes",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user2\",\r\n    \"email\": \"user2@123\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user1@123\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjEiLCJlbWFpbCI6InVzZXIxQDEyMyIsImlkIjoiNjkxMDA2M2I5OWY4OGY5NzVjYTAwZjVlIn0sImlhdCI6MTc2MjY1ODE4NywiZXhwIjoxNzYyNjU5MDg3fQ.lWDQFc-GhoEvaZDCW2jP9c-kcwV0Ims8xHSOQ8WsYt4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/auth/current",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"auth",
+								"current"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Slot Routes",
+			"item": [
+				{
+					"name": "Create Slot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjEiLCJlbWFpbCI6InVzZXIxQDEyMyIsImlkIjoiNjkxMDA2M2I5OWY4OGY5NzVjYTAwZjVlIn0sImlhdCI6MTc2MjY1ODE4NywiZXhwIjoxNzYyNjU5MDg3fQ.lWDQFc-GhoEvaZDCW2jP9c-kcwV0Ims8xHSOQ8WsYt4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"test slot\",\r\n    \"startTime\": \"2025-11-09T08:55:00Z\",\r\n    \"endTime\": \"2025-11-09T09:55:00Z\",\r\n    \"status\": \"BUSY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/slots",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"slots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Slots",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjEiLCJlbWFpbCI6InVzZXIxQDEyMyIsImlkIjoiNjkxMDA2M2I5OWY4OGY5NzVjYTAwZjVlIn0sImlhdCI6MTc2MjY2MDA1MiwiZXhwIjoxNzYyNjYzNjUyfQ.vPhlRp49oluP4bftlwW5nf7FS4XKz5YxbC79nDg1glc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5001/api/slots",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"slots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Slot by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjEiLCJlbWFpbCI6InVzZXIxQDEyMyIsImlkIjoiNjkxMDA2M2I5OWY4OGY5NzVjYTAwZjVlIn0sImlhdCI6MTc2MjY2MDA1MiwiZXhwIjoxNzYyNjYzNjUyfQ.vPhlRp49oluP4bftlwW5nf7FS4XKz5YxbC79nDg1glc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5001/api/slots/691009e026e949875e252d2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"slots",
+								"691009e026e949875e252d2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Slot by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjEiLCJlbWFpbCI6InVzZXIxQDEyMyIsImlkIjoiNjkxMDA2M2I5OWY4OGY5NzVjYTAwZjVlIn0sImlhdCI6MTc2MjY2MDA1MiwiZXhwIjoxNzYyNjYzNjUyfQ.vPhlRp49oluP4bftlwW5nf7FS4XKz5YxbC79nDg1glc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"SWAPPABLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/slots/691009e026e949875e252d2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"slots",
+								"691009e026e949875e252d2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Slot by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjEiLCJlbWFpbCI6InVzZXIxQDEyMyIsImlkIjoiNjkxMDA2M2I5OWY4OGY5NzVjYTAwZjVlIn0sImlhdCI6MTc2MjY2MDA1MiwiZXhwIjoxNzYyNjYzNjUyfQ.vPhlRp49oluP4bftlwW5nf7FS4XKz5YxbC79nDg1glc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5001/api/slots/6910109054690f4f0f23fe74",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"slots",
+								"6910109054690f4f0f23fe74"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Swap Request Routes",
+			"item": [
+				{
+					"name": "Get All Swappable Slots",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjEiLCJlbWFpbCI6InVzZXIxQDEyMyIsImlkIjoiNjkxMDA2M2I5OWY4OGY5NzVjYTAwZjVlIn0sImlhdCI6MTc2MjY2MDA1MiwiZXhwIjoxNzYyNjYzNjUyfQ.vPhlRp49oluP4bftlwW5nf7FS4XKz5YxbC79nDg1glc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5001/api/swaps/swappable-slots",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"swaps",
+								"swappable-slots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Incoming Requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjEiLCJlbWFpbCI6InVzZXIxQDEyMyIsImlkIjoiNjkxMDA2M2I5OWY4OGY5NzVjYTAwZjVlIn0sImlhdCI6MTc2MjY2MDA1MiwiZXhwIjoxNzYyNjYzNjUyfQ.vPhlRp49oluP4bftlwW5nf7FS4XKz5YxbC79nDg1glc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5001/api/swaps/incomingRequests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"swaps",
+								"incomingRequests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Swap Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjEiLCJlbWFpbCI6InVzZXIxQDEyMyIsImlkIjoiNjkxMDA2M2I5OWY4OGY5NzVjYTAwZjVlIn0sImlhdCI6MTc2MjY2MDA1MiwiZXhwIjoxNzYyNjYzNjUyfQ.vPhlRp49oluP4bftlwW5nf7FS4XKz5YxbC79nDg1glc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"offeredSlotId\": \"69101483b9ea265f7b323c56\",\r\n    \"requestedSlotId\": \"691013f3b9ea265f7b323c4e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/swaps/swap-request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"swaps",
+								"swap-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Swap Response",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidXNlcjEiLCJlbWFpbCI6InVzZXIxQDEyMyIsImlkIjoiNjkxMDA2M2I5OWY4OGY5NzVjYTAwZjVlIn0sImlhdCI6MTc2MjY2MjYyMiwiZXhwIjoxNzYyNjY2MjIyfQ.-OYXq09wcviAy4GQD5NNAp4RqkE37ZeHbY0qrYjZ56g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"acceptance\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/swaps/691014e1b9ea265f7b323c5e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"swaps",
+								"691014e1b9ea265f7b323c5e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
