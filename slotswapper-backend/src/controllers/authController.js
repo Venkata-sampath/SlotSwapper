@@ -27,9 +27,8 @@ const registerUser = asyncHandler(async(req, res)=>{
         username, email, password: hashedPassword
     });
 
-    console.log(`User created: ${user}`);
     if(user){
-        res.status(201).json({_id: user.id, email: user.email});
+        res.status(201).json({_id: user.id, username: user.username, email: user.email});
     }else{
         res.status(400);
         throw new Error("User data is invalid!");
