@@ -9,6 +9,14 @@ connectDb();
 // Middleware
 app.use(express.json());
 
+//deploy health check
+app.get("/", (req, res)=>{
+    res.json({
+        status:"Backend Working",
+        message: "Welcome to slot management api"
+    });
+});
+
 // Auth Routes
 app.use("/api/auth", require("./routes/authRoutes"));
 
